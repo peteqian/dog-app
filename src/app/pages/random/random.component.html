@@ -1,0 +1,17 @@
+<div class="container-xl d-flex justify-content-center">
+  <ng-container *ngIf="dogImage; else noDog">
+    <img
+      [src]="dogImage"
+      alt="{{ dogImage }}"
+      class="img-fluid border rounded-3 shadow-lg mb-4"
+      style="max-height: 512px"
+    />
+  </ng-container>
+  <ng-template #noDog> No dog could be fetch. </ng-template>
+</div>
+<div class="container">
+  <span>Generate new random Image</span>
+  <button type="button" class="btn btn-primary" (click)="getRandomImage()">
+    New Image
+  </button>
+</div>
